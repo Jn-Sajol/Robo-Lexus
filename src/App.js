@@ -2,6 +2,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
+import CardList from "./components/CardList/CardList";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -31,7 +32,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="">
         <h1>Hello</h1>
         <input
           type="search"
@@ -40,11 +41,10 @@ const App = () => {
           onChange={(event) => setSearch(event.target.value)}
         />
         {filteredUsers.map((user) => (
-          <div key={user.id}>
-            <h1>{user.name}</h1>
-          </div>
+         <CardList user ={user}></CardList>
         ))}
       </header>
+      
     </div>
   );
 };

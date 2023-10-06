@@ -4,6 +4,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import CardList from "./components/CardList/CardList";
 import { userContext } from "./context/userContext";
+import User from "./components/User";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -32,7 +33,7 @@ const App = () => {
   }, [search, users]);
 
   return (
-    <userContext.Provider>
+    <userContext.Provider value={users}>
     <div className="App">
       <header className="">
         <h1>Hello</h1>
@@ -48,6 +49,7 @@ const App = () => {
       </header>
       
     </div>
+    <User/>
     </userContext.Provider>
   );
 };

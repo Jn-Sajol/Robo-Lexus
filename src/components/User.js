@@ -5,8 +5,10 @@ const User = () => {
     const users = useContext(userContext);
     console.log(users);
   return (
+    <>
     <div>{users.name}</div>
     <div>{users.name}</div>
+    </>
   )
 }
 

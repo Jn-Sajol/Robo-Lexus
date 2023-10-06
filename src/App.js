@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import CardList from "./components/CardList/CardList";
+import { userContext } from "./context/userContext";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -31,6 +32,7 @@ const App = () => {
   }, [search, users]);
 
   return (
+    <userContext.Provider>
     <div className="App">
       <header className="">
         <h1>Hello</h1>
@@ -46,6 +48,7 @@ const App = () => {
       </header>
       
     </div>
+    </userContext.Provider>
   );
 };
 

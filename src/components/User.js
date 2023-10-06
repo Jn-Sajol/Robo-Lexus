@@ -5,7 +5,7 @@ const User = () => {
     const users = useContext(userContext);
     console.log(users);
   return (
-    <div>User</div>
+    <div>{users.name}</div>
   )
 }
 
